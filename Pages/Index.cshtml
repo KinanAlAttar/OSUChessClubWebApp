@@ -4,17 +4,40 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
+<div class="text-center container">
     <h1 class="display-4 mb-2">Welcome to our Chess Club</h1>
     <p> We meet every Thursday from 6-8pm</p>
-    <div class="card bg-dark text-white mb-5">
-        <img class="card-img" src="~/chess-image-chess-club.jpeg" alt="Generic Chess image">
-        <div class="card-img-overlay">
-            <h5 class="card-title">Upcoming Event: Challenge a Champion!</h5>
-            <p class="card-text">This Sunday we will have the Chess Master Calvin
-            Blocker join us virtually over Zoom to lecture and play against our players</p>
-            <p>The event will take place Sunday Oct 18th from 2-5pm! - No Entry Fee is required for Non-OSU students</p>
+    <div class="row">
+        <div class="col-sm">
+            <div class="card bg-dark text-white mb-5">
+                <img class="card-img" src="~/chess-image-chess-club.jpeg" alt="Generic Chess image">
+                <div class="card-img-overlay">
+                    <h5 class="card-title">We will now be meeting in person!</h5>
+                    <p class="card-text">
+                        We will be meetitng in Hays Cape Room on the 3rd of the Ohio Union. The room is limited to 10 people,
+                        so people that come after that capacity has been reached will be paired up and given
+                        a board and pieces to play in a study space nearby.
+                    </p>
+                </div>
+            </div>
         </div>
+    </div>
+    <div class="row mb-2">
+        <div class="col-sm">
+            <h2>Sign Up</h2>
+            You can sign up with your email <br />
+            & recieve news about events and updates.
+        </div>
+    </div>
+    <div class="row mb-5 justify-content-center mt-2">
+        <form name="email-sign-up" class="form-inline" method="post">
+            <div asp-validation-summary="ModelOnly"></div>
+            <div class="form-group mb-2">
+                <input type="email" asp-for="Student.Email" class="form-control" placeholder="Email Address">
+                <span asp-validation-for="Student.Email" class="form-group"></span>
+            </div>
+            <button type="submit" class="btn btn-outline-dark mb-2 ml-2">Sign Up</button>
+        </form>
     </div>
     <p>Follow us on</p>
     <a href="https://twitter.com/ohiostatechess?lang=en" class="btn btn-social-icon btn-twitter">
@@ -32,3 +55,8 @@
         </span>
     </a>
 </div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
