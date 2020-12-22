@@ -1,5 +1,5 @@
 # OSUChessClubWebApp
-An ASP.NET Razor pages web app
+An ASP.NET Core - Razor pages web app
 published with Azure
 
 
