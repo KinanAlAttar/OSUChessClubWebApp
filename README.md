@@ -5,4 +5,4 @@ published with Azure
 
 https://osuchessclub.azurewebsites.net/
 
-NOTE: I stopped Azure from hosting the website as I wanted to add some new updates.
+NOTE: I stopped Azure from hosting the website as I wanted to add some new updates to it.
